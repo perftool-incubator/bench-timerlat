@@ -1,0 +1,29 @@
+{
+    "rickshaw-benchmark": {
+        "schema": {
+            "version": "2020.05.18"
+        }
+    },
+    "benchmark": "timerlat",
+    "controller" : {
+        "post-script" : "%bench-dir%/timerlat-post-process"
+    },
+    "client" : {
+        "files-from-controller": [
+            {
+                "src": "%bench-dir%/timerlat-base",
+                "dest": "/usr/bin/"
+            },
+            {
+                "src": "%bench-dir%/timerlat-client",
+                "dest": "/usr/bin/"
+            },
+            {
+                "src": "%bench-dir%/timerlat-get-runtime",
+                "dest": "/usr/bin/"
+            }
+        ],
+        "runtime" : "timerlat-get-runtime",
+        "start" : "timerlat-client"
+    }
+}
