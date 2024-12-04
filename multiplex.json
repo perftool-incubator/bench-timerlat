@@ -5,7 +5,7 @@
     "integer_ge_zero": {
       "description": "a whole number >= 0",
       "args": [
-	 "dma-latency"
+          "dma-latency"
       ],
       "vals": "[0-9]*$"
     },
@@ -13,17 +13,16 @@
     "integer_gt_zero": {
       "description": "a whole number > 0",
       "args": [
-	 "duration",
-	 "period",
-	 "runtime",
-	 "threshold"
+	      "duration",
+	      "period"
       ],
       "vals": "^[1-9][0-9]*$"
     },
     "integer_range": {
       "description": "a range of whole numbers >= 0",
       "args": [
-	 "cpus"
+	 "cpus",
+     "housekeeping"
       ],
       "vals": "(\\d+(-\\d+)?(,\\s*\\d+(-\\d+)?)*|\\d+(-\\d+)?)"
     },

@@ -22,14 +22,13 @@ else
 fi
 
 no_load_balance=0
-threshold=1
 priority=""
 duration=60
 smt="on"
 period=1000000
-runtime=950000
+housekeeping=${HK_CPUS}
 
-opts=$(getopt -q -o "" --longoptions "cpus:,threshold:,priority:,no-load-balance:,duration:,smt:,period:,runtime:" -n "getopt.sh" -- "$@");
+opts=$(getopt -q -o "" --longoptions "cpus:,housekeeping:,priority:,no-load-balance:,duration:,smt:,period:" -n "getopt.sh" -- "$@");
 if [ $? -ne 0 ]; then
     printf -- "\tUnrecognized option specified\n\n"
     exit 1
@@ -42,9 +41,9 @@ while true; do
             cpus=$1
             shift;
             ;;
-        --threshold)
+        --housekeeping)
             shift;
-            threshold=$1
+            housekeeping=$1
             shift;
             ;;
         --priority)
@@ -57,21 +56,16 @@ while true; do
             duration=$1
             shift;
             ;;
-	--smt)
-	    shift
-	    smt=$1
-	    shift
-	    ;;
+        --smt)
+            shift
+            smt=$1
+            shift
+            ;;
         --period)
-	    shift
-	    period=$1
-	    shift
-	    ;;
-        --runtime)
-	    shift
-	    runtime=$1
-	    shift
-	    ;;
+            shift
+            period=$1
+            shift
+            ;;
         --no-load-balance)
             shift;
             no_load_balance=$1
@@ -123,7 +117,7 @@ if [ $? != 0 ]; then
     exit_error "${output}"
 fi
 
-cmd="taskset -c ${WORKLOAD_CPUS} rtla timerlat top --quiet --duration ${duration}s --threshold ${threshold} --cpus ${WORKLOAD_CPUS} --period ${period} --runtime ${runtime} $priority"
+cmd="taskset -c ${WORKLOAD_CPUS} rtla timerlat top --quiet --duration ${duration}s --house-keeping ${housekeeping} --cpus ${WORKLOAD_CPUS} --period ${period} $priority"
 echo "About to run: $cmd"
 date +%s.%N >begin.txt
 $cmd >timerlat-bin-stderrout.txt 2>&1
