@@ -5,7 +5,8 @@
     "integer_ge_zero": {
       "description": "a whole number >= 0",
       "args": [
-          "dma-latency"
+          "dma-latency",
+	  "deepest-idle-state"
       ],
       "vals": "[0-9]*$"
     },
@@ -14,7 +15,8 @@
       "description": "a whole number > 0",
       "args": [
 	      "duration",
-	      "period"
+	      "period",
+	      "warm-up"
       ],
       "vals": "^[1-9][0-9]*$"
     },
@@ -22,7 +24,7 @@
       "description": "a range of whole numbers >= 0",
       "args": [
 	 "cpus",
-     "housekeeping"
+         "house-keeping"
       ],
       "vals": "(\\d+(-\\d+)?(,\\s*\\d+(-\\d+)?)*|\\d+(-\\d+)?)"
     },
@@ -39,8 +41,14 @@
 	 "smt"
       ],
       "vals": "on|off"
+    },
+    "thread_type": {
+      "description": "thread type (user/kernel)",
+      "args": [
+        "thread"
+      ],
+      "vals": "u|k"
     }
-
   }
 }
 
