@@ -8,18 +8,22 @@
         {
             "name": "default",
             "requirements": [
-		        "packages",
-		        "gettext_src",
-		        "flex_src",
-			"libtraceevent_src",
-		        "libtracefs_src",
-		        "linux_src"
+		"packages"
             ]
         }
     ],
     "requirements": [
         {
             "name": "packages",
+            "type": "distro",
+            "distro_info": {
+                "packages": [
+		    "rtla"
+		]
+            }
+        },
+        {
+            "name": "src-dependencies",
             "type": "distro",
             "distro_info": {
                 "packages": [
@@ -92,11 +96,11 @@
             "name": "linux_src",
             "type": "source",
             "source_info": {
-                "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/snapshot/linux-6.11.tar.gz",
-                "filename": "linux.tar.gz",
+                "url": "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.31.tar.xz",
+                "filename": "linux.tar.xz",
                 "commands": {
-                    "unpack": "tar -xzf linux.tar.gz",
-                    "get_dir": "tar -tzf linux.tar.gz  | head -n 1",
+                    "unpack": "tar -xf linux.tar.xz",
+                    "get_dir": "tar -tf linux.tar.xz  | head -n 1",
                     "commands": [
                         "cd tools/tracing/rtla; make",
                         "cd tools/tracing/rtla; make install",
