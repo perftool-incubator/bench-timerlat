@@ -20,7 +20,7 @@ warm_up=""
 thread=""
 dma_latency=""
 
-+opts=$(getopt -q -o "" --longoptions "cpus:,house-keeping:,priority:,no-load-balance:,duration:,smt:,period:,warm-up:,thread:,dma-latency:,deepest-idle-state:" -n "getopt.sh" -- "$@");
+opts=$(getopt -q -o "" --longoptions "cpus:,house-keeping:,priority:,no-load-balance:,duration:,smt:,period:,warm-up:,thread:,dma-latency:,deepest-idle-state:" -n "getopt.sh" -- "$@");
 if [ $? -ne 0 ]; then
     printf -- "\tUnrecognized option specified\n\n"
     exit 1
