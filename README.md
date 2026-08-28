@@ -7,7 +7,8 @@ Scripts and configuration to run the [rtla timerlat](https://docs.kernel.org/too
 | File | Purpose |
 |------|---------|
 | `rickshaw.json` | Rickshaw integration: defines client scripts and parameter transformations |
-| `multiplex.json` | Parameter validation and presets for multiplex |
+| `multiplex.json` | Parameter validation rules, unit conversions, and presets for multiplex |
+| `benchmark-metadata.json` | Machine-readable description and CDM-indexed source/type list (consumed by `crucible benchmarks list`) |
 | `timerlat-base` | Base setup shared by other scripts |
 | `timerlat-client` | Client-side benchmark execution |
 | `timerlat-get-runtime` | Runtime extraction |

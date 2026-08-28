@@ -1,0 +1,24 @@
+{
+  "rickshaw-benchmark-metadata": {
+    "schema": {
+      "version": "2026.08.11"
+    }
+  },
+  "benchmark": "timerlat",
+  "description": "Real-Time Linux Analysis (rtla) timerlat tracer -- detects and measures operating system timer latency on isolated CPU cores.",
+  "cdm_indexed": true,
+  "cdm_sources": [
+    {
+      "source": "timerlat",
+      "types": [
+        "polling-latency-usec"
+      ]
+    }
+  ],
+  "output_files": [
+    "timerlat-client-stderrout.txt",
+    "timerlat-bin-stderrout.txt",
+    "begin.txt",
+    "end.txt"
+  ]
+}
