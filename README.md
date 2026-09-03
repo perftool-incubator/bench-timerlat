@@ -12,5 +12,5 @@ Scripts and configuration to run the [rtla timerlat](https://docs.kernel.org/too
 | `timerlat-base` | Base setup shared by other scripts |
 | `timerlat-client` | Client-side benchmark execution |
 | `timerlat-get-runtime` | Runtime extraction |
-| `timerlat-post-process` | Post-processing: parses timerlat output into crucible metrics |
+| `timerlat-post-process.py` | Post-processing: parses timerlat output into crucible metrics |
 | `workshop.json` | Engine image build requirements |
