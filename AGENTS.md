@@ -5,7 +5,7 @@ Scripts and configuration to run the rtla timerlat benchmark within the crucible
 
 ## Language
 - Bash for client execution scripts
-- Python for post-processing (`timerlat-post-process`)
+- Python for post-processing (`timerlat-post-process.py`)
 
 ## Key Files
 | File | Purpose |
@@ -16,7 +16,7 @@ Scripts and configuration to run the rtla timerlat benchmark within the crucible
 | `timerlat-base` | Base setup shared by other scripts |
 | `timerlat-client` | Client-side benchmark execution |
 | `timerlat-get-runtime` | Extracts runtime from command-line options |
-| `timerlat-post-process` | Parses timerlat output into crucible metrics |
+| `timerlat-post-process.py` | Parses timerlat output into crucible metrics |
 | `workshop.json` | Engine image build requirements |
 
 ## Conventions
